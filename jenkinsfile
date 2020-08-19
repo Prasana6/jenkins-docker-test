@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Docker-Build') {
+            steps {
+                sh 'docker build -t prasannabaskar/testing:coda .'
+                sh 'docker push prasannabaskar/testing:coda'
+            }
+        }
+        stage('Cleanup') {
+            steps {
+                sh 'docker system prune --all'
+            }
+        }
+    }
+}
