@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Docker-Build') {
             steps {
-                sh 'docker build -t prasannabaskar/testing:coda .'
-                sh 'docker push prasannabaskar/testing:coda'
+                sh 'sudo docker build -t prasannabaskar/testing:coda .'
+                sh 'sudo docker push prasannabaskar/testing:coda'
             }
         }
         stage('Cleanup') {
